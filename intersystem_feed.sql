@@ -4,9 +4,9 @@ Testing Notes:
 */
 select 
 (select [value] from [config] where ([key] = 'https')) + '/manage/lookup-duo/record?id='+convert(char(36),p.[id]) as [Link],
-'SSA' as [Division],
+'EXP' as [Division], --we use a 3 character identifier for our subsytsems, i.e. 'PSD' for 'Physical Sciences Division'
 p.[ref] as [Ref],
-'SSA' + p.[ref] as [SlateID],
+'EXP' + p.[ref] as [SlateID],
 a.[ref] as [SlateAppID],
 (select [value] from dbo.getFieldTopTable(p.[id], 'ucid')) as [UCID],
 p.[last] as [LastName], 
